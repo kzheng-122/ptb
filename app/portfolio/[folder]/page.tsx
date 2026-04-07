@@ -89,7 +89,7 @@ export default function PortfolioFolderPage({ params }: { params: Promise<{ fold
                 {decodedFolder}
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                {images.length > 0 && !loading && `${images.length} photos`}
+                {images.length > 0 && !loading && `${images.length} honest moments`}
               </p>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function PortfolioFolderPage({ params }: { params: Promise<{ fold
             ) : images.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-24">
                 <ImageIcon className="h-16 w-16 text-muted-foreground/50" />
-                <p className="mt-4 text-muted-foreground">No images found in this album</p>
+                <p className="mt-4 text-muted-foreground">No images found yet—this story is still being told</p>
                 <Button asChild className="mt-4" variant="outline">
                   <Link href="/portfolio">Return to Portfolio</Link>
                 </Button>

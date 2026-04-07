@@ -69,10 +69,10 @@ export function GallerySection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Moments Worth Treasuring
+            Every Pet Has a Story
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A glimpse into the joy we capture at every event
+            A warm glimpse into honest, joyful moments from events we've been welcomed into
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export function GallerySection() {
         <div className="mt-12 text-center">
           <Button asChild variant="outline" size="lg" className="rounded-full">
             <Link href="/portfolio">
-              View Full Portfolio
+              See More Stories
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

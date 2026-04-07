@@ -88,10 +88,10 @@ export default function PortfolioPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Our Portfolio
+                Stories We've Captured
               </h1>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Explore our collection of memorable moments captured at weddings, parties, and pet events.
+                Honest, joyful collections from weddings, parties, and gatherings—each shaped around a pet's personality.
               </p>
             </div>
 

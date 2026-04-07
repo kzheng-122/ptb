@@ -74,8 +74,8 @@ export default function EnquiryPage() {
               Thank You!
             </h1>
             <p className="mt-4 text-muted-foreground">
-              We&apos;ve received your enquiry and will get back to you within 24 hours.
-              We can&apos;t wait to help make your event pawsome!
+              We've received your enquiry and will get back to you within 24 hours.
+              We can't wait to help make your event pawsome!
             </p>
             <Button
               className="mt-8 rounded-full"
@@ -101,7 +101,7 @@ export default function EnquiryPage() {
                 Get in Touch
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Tell us about your event and we&apos;ll create something magical together
+                Tell us about your event and we'll create something magical together
               </p>
             </div>
           </div>
@@ -309,7 +309,7 @@ export default function EnquiryPage() {
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
                         1
                       </span>
-                      We&apos;ll review your enquiry within 24 hours
+                      We'll review your enquiry within 24 hours
                     </li>
                     <li className="flex gap-3">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
@@ -321,7 +321,7 @@ export default function EnquiryPage() {
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
                         3
                       </span>
-                      We&apos;ll create a custom quote for your event
+                      We'll create a custom quote for your event
                     </li>
                   </ol>
                 </div>

@@ -3,27 +3,27 @@ import { Heart, Printer, Palette, PartyPopper } from "lucide-react"
 const highlights = [
   {
     icon: Heart,
-    title: "Pet-Friendly Setup",
+    title: "Pet-First Comfort",
     description:
-      "Our booth is designed with pets in mind. Comfortable, safe, and equipped with treats to capture their best moments.",
+      "A gentle, safe space where pets can be themselves. We follow their pace, celebrate their quirks, and earn their trust.",
   },
   {
     icon: Printer,
-    title: "Instant Prints",
+    title: "Prints You Can Hold",
     description:
-      "Take home beautiful, high-quality prints immediately. Share the memories with your guests on the spot.",
+      "High-quality prints that feel like keepsakes—made to be shared, framed, and cherished at home.",
   },
   {
     icon: Palette,
-    title: "Custom Backdrops",
+    title: "Backdrops That Feel Like Home",
     description:
-      "Choose from our collection or bring your own theme. We create stunning backdrops that match your event perfectly.",
+      "Thoughtful setups that match your story and space. Familiar, welcoming, and tailored to your event.",
   },
   {
     icon: PartyPopper,
-    title: "All Events Welcome",
+    title: "For Every Gathering",
     description:
-      "From intimate weddings to corporate gatherings, pet birthdays to family reunions, we bring the fun everywhere.",
+      "From living-room birthdays to wedding receptions, we meet you where you are and make it special.",
   },
 ]
 
@@ -33,10 +33,10 @@ export function HighlightsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Why Choose Pawtobooth?
+            Why Families Choose Us
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            We bring the perfect blend of professionalism and playfulness
+            Honest, warm, and crafted around your pet's personality
           </p>
         </div>
 

@@ -76,10 +76,10 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                About Pawtobooth
+                Our story
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Where passion for pets meets the art of photography
+                Where pets are family, and every story is told with honesty
               </p>
             </div>
           </div>
@@ -106,34 +106,24 @@ export default function AboutPage() {
               </div>
               <div>
                 <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  Our Story
+                  How We Started
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Pawtobooth was born from a simple observation at a friend&apos;s wedding: 
-                    while everyone was having fun at the photo booth, the family dog was 
-                    left out of all the photos.
+                    In 2022, after ORD, Zhi Heng used his hard‑earned NS salary to buy a camera—promising himself he would earn it back through gigs.
                   </p>
                   <p>
-                    That moment sparked an idea. What if we could create a photo booth 
-                    experience designed specifically for pets and their humans? A place 
-                    where wagging tails and genuine smiles could be captured together.
+                    He never thought he'd step into pet photography. When Guinness's pawmum first reached out, he admitted he was scared of dogs—but he was willing to try.
                   </p>
                   <p>
-                    Today, Pawtobooth has become a beloved part of hundreds of weddings, 
-                    birthday parties, corporate events, and celebrations. Our team of 
-                    passionate pet lovers and photographers work together to create 
-                    magical moments that families treasure forever.
+                    That first try turned into trust. With patience, warmth, and honesty, he found a way to photograph pets as they are—curious, shy, playful, confident—always themselves.
                   </p>
                   <p>
-                    Every event is unique, and we bring the same enthusiasm and care 
-                    whether we&apos;re photographing a Great Dane or a hamster. Because 
-                    at the end of the day, it&apos;s all about celebrating the love 
-                    between pets and their people.
+                    Today, we're welcomed into weddings, birthdays, and gatherings big and small. We bring a gentle, home‑like approach so every family leaves with photos that feel like them—because every pet has a story and a personality worth honoring.
                   </p>
                 </div>
                 <Button asChild className="mt-8 rounded-full" size="lg">
-                  <Link href="/enquiry">Work With Us</Link>
+                  <Link href="/enquiry">Invite Us In</Link>
                 </Button>
               </div>
             </div>
@@ -144,10 +134,10 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Our Philosophy
+                What We Believe
               </h2>
               <p className="mt-4 text-muted-foreground">
-                The values that guide everything we do
+                The values that guide every story we help tell
               </p>
             </div>
 

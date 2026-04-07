@@ -20,7 +20,7 @@ const testimonials = [
   {
     id: 3,
     content:
-      "We hired Pawtobooth for our company&apos;s pet-friendly day, and it was the highlight of the event. Professional, fun, and the quality was outstanding.",
+      "We hired Pawtobooth for our company's pet-friendly day, and it was the highlight of the event. Professional, fun, and the quality was outstanding.",
     author: "Michael Torres",
     role: "Corporate Event Organizer",
     rating: 5,
@@ -33,10 +33,10 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Loved by Pet Parents
+            Stories From Pet Families
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Hear what our happy clients have to say
+            Honest words from the homes and events we've been welcomed into
           </p>
         </div>
 

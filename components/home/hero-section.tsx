@@ -14,36 +14,35 @@ export function HeroSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent/30 px-4 py-2 text-sm font-medium text-accent-foreground">
             <Sparkles className="h-4 w-4" />
-            Pet-Friendly Photo Experiences
+            Real, Heartfelt Pet Stories
           </div>
           
           <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            <span className="text-balance">Fun, Candid Pawtobooth for</span>{" "}
-            <span className="text-primary">Weddings & Pet Lovers</span>
+            <span className="text-balance">Every Pet Has a Story.</span>{" "}
+            <span className="text-primary">We Capture It Honestly.</span>
           </h1>
           
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
-            Create unforgettable memories with your furry family members. Our professional 
-            photo booth brings joy, laughter, and instant prints to your special day.
+            A warm, genuine photo experience made for pets and their people. No stiff poses—just real moments, true personalities, and memories that feel like home.
           </p>
           
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="rounded-full px-8">
               <Link href="/enquiry">
                 <Heart className="mr-2 h-4 w-4" />
-                Enquire Now
+                Start Your Story
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-              <Link href="/portfolio">View Our Work</Link>
+              <Link href="/portfolio">See Honest Moments</Link>
             </Button>
           </div>
         </div>
         
         <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
           {[
-            { stat: "500+", label: "Happy Events" },
-            { stat: "10K+", label: "Photos Taken" },
+            { stat: "500+", label: "Families Welcomed" },
+            { stat: "10K+", label: "Stories Shared" },
             { stat: "98%", label: "Pet Approved" },
             { stat: "5.0", label: "Rating" },
           ].map((item) => (

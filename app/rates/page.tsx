@@ -94,10 +94,10 @@ export default function PackagesPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Our Packages
+                Packages Made For Real Moments
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Choose the perfect package for your special event
+                Choose what feels right for your family and your pet's personality
               </p>
             </div>
           </div>
@@ -169,10 +169,10 @@ export default function PackagesPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground">
-                Add-Ons
+                    Thoughtful Add-Ons
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Enhance your experience with these extras
+                    Personal touches to make your story uniquely yours
               </p>
             </div>
 
