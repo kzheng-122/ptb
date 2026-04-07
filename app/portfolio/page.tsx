@@ -5,27 +5,22 @@ import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { ArrowRight, ImageIcon } from "lucide-react"
+import { ImageIcon } from "lucide-react"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 
 interface PortfolioFolder {
   name: string
   path: string
 }
 
-interface CoverImage {
-  secure_url: string
-  width: number
-  height: number
-}
-
 export default function PortfolioPage() {
   const [folders, setFolders] = useState<PortfolioFolder[]>([])
-  const [coverImages, setCoverImages] = useState<Record<string, CoverImage>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [activeFolder, setActiveFolder] = useState<string | null>(null)
+  const [images, setImages] = useState<Record<string, any[]>>({})
 
   useEffect(() => {
     async function fetchFolders() {
@@ -39,31 +34,10 @@ export default function PortfolioPage() {
 
         const data = await response.json()
         setFolders(data)
-
-        // Fetch cover images for each folder
-        const coverPromises = data.map(async (folder: PortfolioFolder) => {
-          try {
-            const coverResponse = await fetch(`/api/portfolio-images?folder=${folder.path}`)
-            if (coverResponse.ok) {
-              const images = await coverResponse.json()
-              if (images.length > 0) {
-                return { path: folder.path, image: images[0] }
-              }
-            }
-          } catch (err) {
-            console.error(`Error fetching cover for ${folder.path}:`, err)
-          }
-          return null
-        })
-
-        const covers = await Promise.all(coverPromises)
-        const coverMap: Record<string, CoverImage> = {}
-        covers.forEach(cover => {
-          if (cover) {
-            coverMap[cover.path] = cover.image
-          }
-        })
-        setCoverImages(coverMap)
+        if (data.length > 0) {
+          const first = data[0].path
+          setActiveFolder(first)
+        }
       } catch (err) {
         console.error("Error fetching folders:", err)
         setError("Failed to load portfolio. Please try again later.")
@@ -74,6 +48,23 @@ export default function PortfolioPage() {
 
     fetchFolders()
   }, [])
+
+  useEffect(() => {
+    async function fetchImages() {
+      if (!activeFolder) return
+      try {
+        const response = await fetch(`/api/portfolio-images?folder=${activeFolder}`)
+        if (!response.ok) {
+          throw new Error("Failed to fetch images")
+        }
+        const data = await response.json()
+        setImages(prev => ({ ...prev, [activeFolder]: data || [] }))
+      } catch (err) {
+        console.error("Error fetching images:", err)
+      }
+    }
+    fetchImages()
+  }, [activeFolder])
 
   if (error) {
     return (
@@ -104,9 +95,10 @@ export default function PortfolioPage() {
               </p>
             </div>
 
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {loading
-                ? Array.from({ length: 6 }).map((_, i) => (
+            <div className="mt-16">
+              {loading ? (
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                  {Array.from({ length: 6 }).map((_, i) => (
                     <Card key={i} className="overflow-hidden">
                       <CardContent className="p-0">
                         <Skeleton className="aspect-square w-full" />
@@ -116,44 +108,52 @@ export default function PortfolioPage() {
                         </div>
                       </CardContent>
                     </Card>
-                  ))
-                : folders.map((folder) => {
-                    const coverImage = coverImages[folder.path]
-                    const folderName = folder.path.split('/').pop() || folder.name
-
+                  ))}
+                </div>
+              ) : (
+                <Tabs value={activeFolder || undefined} onValueChange={setActiveFolder}>
+                  <TabsList>
+                    {folders.map((folder) => {
+                      const folderName = folder.path.split('/').pop() || folder.name
+                      return (
+                        <TabsTrigger key={folder.path} value={folder.path}>
+                          {folderName.replace(/-/g, ' ')}
+                        </TabsTrigger>
+                      )
+                    })}
+                  </TabsList>
+                  {folders.map((folder) => {
+                    const folderImages = images[folder.path] || []
                     return (
-                      <Card key={folder.path} className="group overflow-hidden transition-all hover:shadow-lg">
-                        <CardContent className="p-0">
-                          <Link href={`/portfolio/${encodeURIComponent(folderName)}`}>
-                            <div className="aspect-square overflow-hidden bg-muted">
-                              {coverImage ? (
+                      <TabsContent key={folder.path} value={folder.path} className="mt-6">
+                        {folderImages.length === 0 ? (
+                          <div className="flex flex-col items-center justify-center py-24">
+                            <ImageIcon className="h-16 w-16 text-muted-foreground/50" />
+                            <p className="mt-4 text-muted-foreground">No images found in this album</p>
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+                            {folderImages.map((image, index) => (
+                              <div
+                                key={`${folder.path}-${index}`}
+                                className="group relative aspect-square overflow-hidden rounded-2xl bg-muted"
+                              >
                                 <Image
-                                  src={coverImage.secure_url}
-                                  alt={folderName}
-                                  width={coverImage.width}
-                                  height={coverImage.height}
-                                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                                  src={image.secure_url}
+                                  alt={`Photo ${index + 1}`}
+                                  fill
+                                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                                 />
-                              ) : (
-                                <div className="flex h-full items-center justify-center bg-muted">
-                                  <ImageIcon className="h-12 w-12 text-muted-foreground" />
-                                </div>
-                              )}
-                            </div>
-                            <div className="p-4">
-                              <h3 className="font-semibold text-lg capitalize">
-                                {folderName.replace(/-/g, ' ')}
-                              </h3>
-                              <div className="mt-2 flex items-center text-sm text-muted-foreground">
-                                View Gallery
-                                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                               </div>
-                            </div>
-                          </Link>
-                        </CardContent>
-                      </Card>
+                            ))}
+                          </div>
+                        )}
+                      </TabsContent>
                     )
                   })}
+                </Tabs>
+              )}
             </div>
           </div>
         </section>

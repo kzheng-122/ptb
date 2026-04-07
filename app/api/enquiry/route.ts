@@ -43,7 +43,7 @@ Message: ${message || 'No message'}
 
       try {
         await resend.emails.send({
-          from: 'Pawtobooth <noreply@pawtobooth.com>', // Update with your verified domain
+          from: 'Pawtobooth <khorzhiheng@gmail.com>', // Update with your verified domain
           to: process.env.EMAIL_TO,
           subject: `New Pawtobooth Enquiry – ${name}`,
           text: emailContent,

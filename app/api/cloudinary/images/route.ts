@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          expression: `asset_folder:${folder}`,
+          expression: `folder:${folder}`,
           max_results: 100,
           sort_by: [{ created_at: "desc" }],
         }),

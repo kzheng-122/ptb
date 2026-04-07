@@ -14,31 +14,41 @@ export async function GET() {
 
   try {
     const auth = Buffer.from(`${API_KEY}:${API_SECRET}`).toString("base64")
-    
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders`,
-      {
+    const urls = [
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/portfolio`,
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/Portfolio`,
+    ]
+    const results: any[] = []
+    for (const url of urls) {
+      const r = await fetch(url, {
         headers: {
           Authorization: `Basic ${auth}`,
         },
-        next: { revalidate: 300 }, // Cache for 5 minutes
+        next: { revalidate: 300 },
+      })
+      if (r.ok) {
+        const d = await r.json()
+        if (Array.isArray(d.folders)) {
+          results.push(...d.folders)
+        }
       }
-    )
-
-    if (!response.ok) {
-      const error = await response.text()
-      console.error("Cloudinary folders API error:", error)
-      return NextResponse.json(
-        { error: "Failed to fetch folders" },
-        { status: response.status }
-      )
     }
-
-    const data = await response.json()
-    // Filter for folders inside /portfolio only
-    const portfolioFolders = data.folders.filter((folder: any) => 
-      folder.path.startsWith('portfolio/') && folder.path !== 'portfolio'
-    )
+    const seen = new Set<string>()
+    const portfolioFolders = results
+      .filter((folder: any) => {
+        const p = folder?.path || ""
+        return (
+          (p.startsWith("portfolio/") || p.startsWith("Portfolio/")) &&
+          p !== "portfolio" &&
+          p !== "Portfolio"
+        )
+      })
+      .filter((f: any) => {
+        const key = f.path
+        if (seen.has(key)) return false
+        seen.add(key)
+        return true
+      })
     return NextResponse.json(portfolioFolders)
   } catch (error) {
     console.error("Error fetching portfolio folders:", error)

@@ -24,35 +24,37 @@ export async function GET(request: Request) {
 
   try {
     const auth = Buffer.from(`${API_KEY}:${API_SECRET}`).toString("base64")
-    
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/search`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${auth}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          expression: `asset_folder:${folder}`,
-          max_results: 100,
-          sort_by: [{ created_at: "desc" }],
-        }),
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      }
-    )
-
-    if (!response.ok) {
-      const error = await response.text()
-      console.error("Cloudinary search API error:", error)
-      return NextResponse.json(
-        { error: "Failed to fetch images" },
-        { status: response.status }
-      )
+    const urls = [`folder:${folder}`]
+    if (folder.startsWith("portfolio/")) {
+      urls.push(`folder:Portfolio/${folder.slice("portfolio/".length)}`)
+    } else if (folder.startsWith("Portfolio/")) {
+      urls.push(`folder:portfolio/${folder.slice("Portfolio/".length)}`)
     }
-
-    const data = await response.json()
-    return NextResponse.json(data.resources || [])
+    for (const expr of urls) {
+      const r = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/search`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Basic ${auth}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            expression: expr,
+            max_results: 100,
+            sort_by: [{ created_at: "desc" }],
+          }),
+          next: { revalidate: 300 },
+        }
+      )
+      if (r.ok) {
+        const d = await r.json()
+        if (Array.isArray(d.resources) && d.resources.length > 0) {
+          return NextResponse.json(d.resources)
+        }
+      }
+    }
+    return NextResponse.json([])
   } catch (error) {
     console.error("Error fetching portfolio images:", error)
     return NextResponse.json(
