@@ -4,7 +4,8 @@ A modern, playful web application for Pawtobooth, a pet-friendly photography ser
 ## TDL:
 1. add gallery
 2. update texts
-3. decide name and get domain so that resend works.s
+3. decide name and get domain so that resend works.
+
 ## Project Overview
 
 This is a full-stack application built with:
