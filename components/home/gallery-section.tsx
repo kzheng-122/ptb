@@ -76,33 +76,26 @@ export function GallerySection() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
-          {loading
-            ? Array.from({ length: 9 }).map((_, i) => (
-                <Skeleton key={i} className="aspect-square rounded-2xl" />
-              ))
-            : images.map((image) => (
-                <div
-                  key={image.public_id}
-                  className="group relative aspect-square overflow-hidden rounded-2xl bg-muted"
-                  onMouseEnter={() => setHoveredId(image.public_id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                >
-                  <Image
-                    src={`${image.secure_url}?f=auto&q=auto`}
-                    alt="Pawtobooth moment"
-                    fill
-                    className={`object-cover transition-transform duration-500 ${
-                      hoveredId === image.public_id ? "scale-110" : "scale-100"
-                    }`}
-                  />
-                  <div
-                    className={`absolute inset-0 bg-foreground/20 transition-opacity duration-300 ${
-                      hoveredId === image.public_id ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                </div>
-              ))}
+        <div className="mt-12 flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+          {images.map((image) => (
+            <div
+              key={image.public_id}
+              className="group relative h-64 overflow-hidden rounded-2xl bg-muted flex-shrink-0"               
+              onMouseEnter={() => setHoveredId(image.public_id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <Image
+                src={`${image.secure_url}?f=auto&q=auto`}
+                alt="Pawtobooth moment"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className={`h-full w-auto transition-transform duration-500 ${
+                  hoveredId === image.public_id ? "scale-110" : "scale-100"
+                }`}
+              />
+            </div>
+          ))}
         </div>
 
         <div className="mt-12 text-center">
