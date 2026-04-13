@@ -15,8 +15,7 @@ export async function GET() {
   try {
     const auth = Buffer.from(`${API_KEY}:${API_SECRET}`).toString("base64")
     const urls = [
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/portfolio`,
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/Portfolio`,
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/folders/portfolio`
     ]
     const results: any[] = []
     for (const url of urls) {

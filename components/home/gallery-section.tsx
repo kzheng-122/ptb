@@ -76,13 +76,11 @@ export function GallerySection() {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+        <div className="mt-12 flex flex-wrap justify-center gap-2 max-w-6xl mx-auto">
           {images.map((image) => (
             <div
               key={image.public_id}
               className="group relative h-64 overflow-hidden rounded-2xl bg-muted flex-shrink-0"               
-              onMouseEnter={() => setHoveredId(image.public_id)}
-              onMouseLeave={() => setHoveredId(null)}
             >
               <Image
                 src={`${image.secure_url}?f=auto&q=auto`}
