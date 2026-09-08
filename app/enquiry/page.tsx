@@ -17,14 +17,12 @@ import {
 import { Mail, Phone, MapPin, CheckCircle, Loader2 } from "lucide-react"
 
 const eventTypes = [
-  "Wedding",
+  "Photoshoot",
   "Pet Birthday Party",
-  "Corporate Event",
-  "Private Party",
-  "Other",
+  "Others (Please specify in Additional Details)",
 ]
 
-const hoursOptions = ["2 Hours", "3 Hours", "4 Hours", "5+ Hours"]
+const hoursOptions = ["1 Hour", "2 Hours", "3 Hours", "4 Hours", "5+ Hours"]
 
 export default function EnquiryPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -94,10 +92,10 @@ export default function EnquiryPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="bg-secondary/30 py-16 lg:py-24">
+        <section className="bg-secondary/30 py-8 lg:py-5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground">
                 Get in Touch
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -107,7 +105,7 @@ export default function EnquiryPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-3">
               <div className="lg:col-span-2">
@@ -144,10 +142,11 @@ export default function EnquiryPage() {
 
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone (Optional)</Label>
+                      <Label htmlFor="phone">Phone *</Label>
                       <Input
                         id="phone"
                         type="tel"
+                        required
                         placeholder="Your phone number"
                         value={formData.phone}
                         onChange={(e) =>
@@ -273,7 +272,7 @@ export default function EnquiryPage() {
                       <div>
                         <p className="text-sm font-medium text-foreground">Email</p>
                         <p className="text-sm text-muted-foreground">
-                          hello@pawtobooth.com
+                          hello@milou.com
                         </p>
                       </div>
                     </li>
@@ -282,7 +281,7 @@ export default function EnquiryPage() {
                       <div>
                         <p className="text-sm font-medium text-foreground">Phone</p>
                         <p className="text-sm text-muted-foreground">
-                          (555) 123-4567
+                          (+65) 91917844
                         </p>
                       </div>
                     </li>
@@ -293,7 +292,7 @@ export default function EnquiryPage() {
                           Service Area
                         </p>
                         <p className="text-sm text-muted-foreground">
-                          Greater Los Angeles Area
+                          Singapore
                         </p>
                       </div>
                     </li>

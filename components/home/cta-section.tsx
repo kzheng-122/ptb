@@ -4,7 +4,7 @@ import { Calendar, ArrowRight } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="bg-primary py-20 lg:py-28">
+    <section className="bg-primary py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">

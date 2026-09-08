@@ -13,7 +13,7 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSection />
         <GallerySection />
-        <HighlightsSection />
+        {/* <HighlightsSection /> */}
         <TestimonialsSection />
         <CTASection />
       </main>

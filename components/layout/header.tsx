@@ -10,8 +10,8 @@ const navLinks = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/packages", label: "Packages" },
   { href: "/about", label: "About" },
-  { href: "/partners", label: "Partners" },
-  { href: "/faq", label: "FAQ" },
+  //{ href: "/partners", label: "Partners" },
+  //{ href: "/faq", label: "FAQ" }, 
 ]
 
 export function Header() {
@@ -25,7 +25,7 @@ export function Header() {
             <Camera className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
-            Pawtobooth
+            PawtoBoothSG
           </span>
         </Link>
 

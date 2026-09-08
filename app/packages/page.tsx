@@ -7,93 +7,80 @@ import { Check, Star, Clock, Camera, Printer, Sparkles } from "lucide-react"
 const packages = [
   {
     id: 1,
-    name: "Paw-ty Starter",
-    duration: "2 Hours",
-    price: 599,
-    description: "Perfect for intimate gatherings and small events",
+    name: "The Photoshoot Experience",
+//    duration: "--------",
+    price: 300,
+    description: "Designed to capture your pet's personality in its most authentic form",
     features: [
-      "2 hours of photo booth fun",
-      "Unlimited shots",
-      "Instant 4x6 prints",
-      "Digital copies included",
-      "Basic prop collection",
-      "1 backdrop choice",
+      "up to 1 hour session",
+      "40 edited high-resolution images",
+      "Guided, natural storytelling",
+      "Personalized online gallery for viewing",
     ],
-    isPopular: false,
+    isPopular: true,
   },
   {
     id: 2,
-    name: "Furever Classic",
-    duration: "3 Hours",
-    price: 849,
-    description: "Our most popular package for weddings and celebrations",
+    name: (<span> The Pawty <br /> Experience </span>),
+//    duration: "--------",
+    price: 550,
+    description: "For celebrations that deserve to be remembered beyond the moment",
     features: [
-      "3 hours of photo booth fun",
-      "Unlimited shots",
-      "Instant 4x6 prints",
-      "Digital copies included",
-      "Premium prop collection",
-      "2 backdrop choices",
-      "Custom print design",
-      "Pet treats station",
+      "up to 2 hours coverage",
+      "100 edited high-resolution images",
+      "Documentary-style storytelling",
+      "Personalized online gallery for viewing",
     ],
     isPopular: true,
   },
   {
     id: 3,
-    name: "Ultimate Pawsome",
-    duration: "4 Hours",
-    price: 1199,
+    name: "The complete Story (Bundle)",
+//    duration: "Photoshoot + Pawty",
+    price: 750,
     description: "The complete experience for grand celebrations",
     features: [
-      "4 hours of photo booth fun",
-      "Unlimited shots",
-      "Instant 4x6 prints",
-      "Digital copies included",
-      "Deluxe prop collection",
-      "3 backdrop choices",
-      "Custom print design",
-      "Pet treats station",
-      "Social media station",
-      "Guest book album",
-      "Dedicated pet handler",
+      "1x photoshoot experience (up to 1 hour)",
+      "1x pawty experience (up to 2 hours)",
+      "Complete narrative of your pet's story",
+      "Personalized online gallery for viewing",
     ],
-    isPopular: false,
+    isPopular: true,
   },
 ]
 
-const addOns = [
+ const addOns = [
   {
-    name: "Extra Hour",
-    price: 199,
+    name: "Additional Time",
+    price: "50 / 30 minutes",
     icon: Clock,
   },
   {
-    name: "Additional Backdrop",
+    name: "Additional Location",
     price: 75,
     icon: Camera,
   },
   {
-    name: "Custom Print Design",
-    price: 150,
-    icon: Printer,
-  },
-  {
-    name: "Premium Props Package",
-    price: 100,
+    name: "Priority Editing",
+    price: " (30% of total package price)",
     icon: Sparkles,
   },
-]
+  {
+    name: "Portfolio Opt-Out",
+    price: 100,
+    icon: Printer,
+  },
+] 
 
 export default function PackagesPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="bg-secondary/30 py-16 lg:py-24">
+        <section className="bg-secondary/30 py-8 lg:py-5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground">
                 Our Packages
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -103,7 +90,7 @@ export default function PackagesPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-3">
               {packages.map((pkg) => (
@@ -115,24 +102,24 @@ export default function PackagesPage() {
                       : "border-border bg-card"
                   }`}
                 >
-                  {pkg.isPopular && (
+                  {/* {pkg.isPopular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <div className="flex items-center gap-1 rounded-full bg-primary px-4 py-1 text-sm font-medium text-primary-foreground">
                         <Star className="h-4 w-4 fill-current" />
                         Most Popular
                       </div>
                     </div>
-                  )}
+                  )} */}
 
                   <div className="text-center">
-                    <h3 className="font-serif text-2xl font-bold text-foreground">
+                    <h3 className="font-Cormorant Garamond text-2xl font-bold text-foreground">
                       {pkg.name}
                     </h3>
-                    <div className="mt-2 text-sm text-muted-foreground">
+                    {/* <div className="mt-2 text-sm text-muted-foreground">
                       {pkg.duration}
-                    </div>
+                    </div> */}
                     <div className="mt-4">
-                      <span className="font-serif text-4xl font-bold text-foreground">
+                      <span className="font-Cormorant Garamond text-4xl font-bold text-foreground">
                         ${pkg.price}
                       </span>
                     </div>
@@ -157,7 +144,7 @@ export default function PackagesPage() {
                     }`}
                     variant={pkg.isPopular ? "default" : "outline"}
                   >
-                    <Link href="/enquiry">Choose {pkg.name}</Link>
+                    <Link href="/enquiry">Enquire Now</Link>
                   </Button>
                 </div>
               ))}
@@ -165,7 +152,7 @@ export default function PackagesPage() {
           </div>
         </section>
 
-        <section className="bg-secondary/30 py-16 lg:py-24">
+        {/* <section className="bg-secondary/30 py-8 lg:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground">
@@ -190,10 +177,10 @@ export default function PackagesPage() {
                     <p className="text-sm text-muted-foreground">+${addon.price}</p>
                   </div>
                 </div>
-              ))}
+              ))} 
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>
