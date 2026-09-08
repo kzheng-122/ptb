@@ -22,7 +22,7 @@ const values = [
     icon: Heart,
     title: "Pets Are Family",
     description:
-      "We believe that pets are beloved family members who deserve to be part of every celebration and memory.",
+      "They’re comfort, companionship, and the heart of a home.",
   },
   {
     icon: Camera,
@@ -34,13 +34,13 @@ const values = [
     icon: Users,
     title: "Connection",
     description:
-      "Our booth brings people together, creating shared experiences and lasting memories.",
+      "Bringing people together, creating shared experiences and lasting memories.",
   },
   {
     icon: Award,
     title: "Quality First",
     description:
-      "From our equipment to our prints, we never compromise on delivering the best for our clients.",
+      "We never compromise on delivering the best for our clients.",
   },
 ]
 
@@ -72,10 +72,10 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="bg-secondary/30 py-16 lg:py-24">
+        <section className="bg-secondary/30 py-8 lg:py-5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground">
                 Our story
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -85,7 +85,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted">
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 ) : displayImage ? (
                   <Image
                     src={`${displayImage.secure_url}?f=auto&q=auto`}
-                    alt="Pawtobooth team"
+                    alt="Meet the team"
                     fill
                     className="object-cover"
                   />
@@ -110,20 +110,48 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    In 2022, after ORD, Zhi Heng used his hard‑earned NS salary to buy a camera—promising himself he would earn it back through gigs.
+                    What started as a simple idea between a freelance photographer and a supportive partner slowly grew into something much more meaningful.
                   </p>
                   <p>
-                    He never thought he'd step into pet photography. When Guinness's pawmum first reached out, he admitted he was scared of dogs—but he was willing to try.
+                    One day, we thought "what if we didn’t just capture moments, but brought the experience to people?"
+                    And so, we began offering on-site shoots, creating little pockets of joy wherever we go — from cozy homes to lively celebrations.
                   </p>
                   <p>
-                    That first try turned into trust. With patience, warmth, and honesty, he found a way to photograph pets as they are—curious, shy, playful, confident—always themselves.
+                    At the heart of it, we’re just two people who love documenting honest, unfiltered moments between pets and the people who love them most.
                   </p>
+                  <p>                  
+                    Because to us, this isn’t just photography.
+                  </p>
+                </div>
+                <br/>
+                <br/>
+                <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  Our Belives
+                </h2>
+                <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Today, we're welcomed into weddings, birthdays, and gatherings big and small. We bring a gentle, home‑like approach so every family leaves with photos that feel like them—because every pet has a story and a personality worth honoring.
+                    In every owner’s eyes, their pet plays a much bigger role than the world often sees.
+                  </p>
+                  <p> 
+                    They’re family.<br/>
+                    They’re comfort after a long day.<br/>
+                    They’re the little personality that fills a home with life.
+                  </p>
+                  <p> 
+                    And that belief shapes everything we do.<br/>
+                    We don’t just photograph how your pet looks — we capture how they’re seen.
+                  </p>
+                  <p> 
+                    The tiny quirks.<br/>
+                    The quiet moments.<br/>
+                    The joy, the chaos, the love.
+                  </p>
+                  <p> 
+                    The kind of memories that feel ordinary now, but mean everything later.
                   </p>
                 </div>
                 <Button asChild className="mt-8 rounded-full" size="lg">
-                  <Link href="/enquiry">Invite Us In</Link>
+                  <Link href="/enquiry">Enquire Now</Link>
                 </Button>
               </div>
             </div>
@@ -137,7 +165,7 @@ export default function AboutPage() {
                 What We Believe
               </h2>
               <p className="mt-4 text-muted-foreground">
-                The values that guide every story we help tell
+                We don’t just photograph how your pet looks — we capture how they’re seen.
               </p>
             </div>
 

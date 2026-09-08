@@ -4,32 +4,32 @@ const testimonials = [
   {
     id: 1,
     content:
-      "Pawtobooth made our wedding absolutely magical! Our dog Max was the star of the photo booth, and guests are still talking about those photos months later.",
-    author: "Sarah & James",
-    role: "Wedding Couple",
+      "We would wholeheartedly recommend Zhi Heng for your photoshoots; he is telented and gifted in his craft. As a bonus, he also has a lovely and friendly personality. Being young works in his favous - he is energetic, zealous and honest in his work. He over-delivered and his passion for photography shone through in the photos he captured for us.",
+    author: "D x C",
+    role: "Pet Pawty",
     rating: 5,
   },
   {
     id: 2,
     content:
-      "The team was incredibly patient with all our cats. The photos turned out amazing and the instant prints were a hit with everyone at the party!",
-    author: "Emily Chen",
-    role: "Pet Birthday Party",
+      "We're here again with Zhiheng for Gi's Gotchda Day photoshoot. His engagement in the shoot was necessary and on point as he will give us tips and tell us what to do to achieve the photos that we are looking for. And without a doubt, he had delivered us with a whole set of beatifully taken photos of our baby gi. We're very thankful to have met you and see you again for Gi's 2nd Birthday!",
+    author: "S",
+    role: "Pet Photoshoot & Pawty",
     rating: 5,
   },
   {
     id: 3,
     content:
-      "We hired Pawtobooth for our company's pet-friendly day, and it was the highlight of the event. Professional, fun, and the quality was outstanding.",
-    author: "Michael Torres",
-    role: "Corporate Event Organizer",
+      "The photographer was super patient and captured my furkid's personality perfectly. 10/10!! Can't wait for the next shoot for her 1st barkday pawty!!",
+    author: "G",
+    role: "Pet Photoshoot & Party",
     rating: 5,
   },
 ]
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -61,7 +61,7 @@ export function TestimonialsSection() {
                 &ldquo;{testimonial.content}&rdquo;
               </p>
               
-              <div className="mt-6 border-t border-border pt-6">
+              <div className="mt-6 border-t border-border pt-3">
                 <p className="font-semibold text-foreground">
                   {testimonial.author}
                 </p>

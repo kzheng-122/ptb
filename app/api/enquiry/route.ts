@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     // Send email via Resend if configured
     if (resend && process.env.EMAIL_TO) {
       const emailContent = `
-New Pawtobooth Enquiry
+New Milou Enquiry
 
 Name: ${name}
 Email: ${email}
@@ -43,9 +43,9 @@ Message: ${message || 'No message'}
 
       try {
         await resend.emails.send({
-          from: 'Pawtobooth <khorzhiheng@gmail.com>', // Update with your verified domain
+          from: 'Milou <khorzhiheng@gmail.com>', // Update with your verified domain
           to: process.env.EMAIL_TO,
-          subject: `New Pawtobooth Enquiry – ${name}`,
+          subject: `Milou Enquiry – ${name}`,
           text: emailContent,
         })
       } catch (emailError) {

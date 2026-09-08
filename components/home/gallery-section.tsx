@@ -46,7 +46,7 @@ export function GallerySection() {
 
   if (error) {
     return (
-      <section className="py-20 lg:py-28">
+      <section className="py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -65,14 +65,14 @@ export function GallerySection() {
   }
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="bg-secondary/50 py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Every Pet Has a Story
+            Preserving What Matters Most
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A warm glimpse into honest, joyful moments from events we've been welcomed into
+            A warm glimpse into honest, joyful moments from events we've been welcomed
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export function GallerySection() {
             >
               <Image
                 src={`${image.secure_url}?f=auto&q=auto`}
-                alt="Pawtobooth moment"
+                alt="Moments"
                 width={0}
                 height={0}
                 sizes="100vw"
@@ -97,7 +97,7 @@ export function GallerySection() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild variant="outline" size="lg" className="rounded-full">
+          <Button asChild size="lg" className="rounded-full">
             <Link href="/portfolio">
               See More Stories
               <ArrowRight className="ml-2 h-4 w-4" />

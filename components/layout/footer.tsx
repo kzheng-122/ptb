@@ -5,11 +5,11 @@ const footerLinks = {
   services: [
     { href: "/packages", label: "Packages" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/partners", label: "Partners" },
+    // { href: "/partners", label: "Partners" },
   ],
   company: [
     { href: "/about", label: "About Us" },
-    { href: "/faq", label: "FAQ" },
+    // { href: "/faq", label: "FAQ" },
     { href: "/enquiry", label: "Contact" },
   ],
 }
@@ -25,16 +25,16 @@ export function Footer() {
                 <Camera className="h-5 w-5 text-primary-foreground" />
               </div>
               <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
-                Pawtobooth
+                PawtoBoothSG
               </span>
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Capturing magical moments with your furry family members. Professional pet-friendly 
-              photo booth services for weddings, parties, and corporate events.
+              photography services for causal shoots, parties, and corporate events.
             </p>
             <div className="mt-6 flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/pawtoboothsg/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
@@ -42,7 +42,7 @@ export function Footer() {
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a
+             {/* <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,9 +50,9 @@ export function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
-              </a>
+              </a> */}
               <a
-                href="mailto:hello@pawtobooth.com"
+                href="mailto:hello@milou.com"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="Email"
               >
@@ -94,11 +94,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8">
+       {/* <div className="mt-12 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Pawtobooth. All rights reserved.
+            &copy; {new Date().getFullYear()} PawtoboothSG. All rights reserved.
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

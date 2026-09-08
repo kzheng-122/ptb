@@ -29,7 +29,7 @@ const highlights = [
 
 export function HighlightsSection() {
   return (
-    <section className="bg-secondary/50 py-20 lg:py-28">
+    <section className="bg-secondary/50 py-8 lg:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
