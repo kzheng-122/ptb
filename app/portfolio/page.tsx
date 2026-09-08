@@ -31,6 +31,7 @@ export default function PortfolioPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const [loading, setLoading] = useState(true)
+  
 
   // Fetch folders
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function PortfolioPage() {
 
       setSubfolders(prev => ({
         ...prev,
-        [activeFolder]: data,
+        [activeFolder!]: data,
       }))
 
       data.forEach(async (sub: PortfolioSubfolder) => {
